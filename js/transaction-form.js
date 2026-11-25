@@ -56,6 +56,14 @@ function setFormMessage(text, isError = false) {
     formMessage.className = isError ? "text-expense" : "text-income";
 }
 
+//the import button listener
+const importButton = document.getElementById("import-csv-btn");
+const importInput = document.getElementById("import-csv-input");
+
+importButton.addEventListener("click", () => {
+    importInput.click();
+});
+
 function populateFilterCategoryDropdown() {
     const current = filterCategoryEl.value;
     filterCategoryEl.replaceChildren();
@@ -244,7 +252,7 @@ function drawChart(rows, totalExpense) {
     const dpr = window.devicePixelRatio || 1;
     const rect = canvas.getBoundingClientRect();
     const w = rect.width || 480;
-    const h = 220;
+    const h = rect.height || 220;
 
     canvas.width = w * dpr;
     canvas.height = h * dpr;

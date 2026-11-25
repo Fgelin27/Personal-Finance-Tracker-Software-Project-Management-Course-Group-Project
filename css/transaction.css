@@ -306,3 +306,153 @@ canvas {
     margin-bottom: 1rem;
     display: none;
 }
+
+/* mobile design */
+
+@media (max-width: 600px){
+    /*generel layout*/
+
+    body{
+        padding: 0.5rem 0 1rem;
+    }
+    main.container {
+        width: 100%;
+        max-width: 100%;
+        padding-inline: 0.65rem;
+    }
+
+    .header-bar {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0.65rem;
+    }
+
+    header.page-header h1{
+        font-size: 1.2rem;
+    }
+    .header-bar .toolbar {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        width: 100%;
+    }
+
+    .header-bar .toolbar button{
+        width: 100%;
+        min-width: 0;
+        text-align: center;
+        font-size: 0.8rem;
+        padding: 0.65rem 0.3rem;
+    }
+
+    /*summary card*/
+
+    .summary-strip{
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 0.5rem;
+    }
+    .summary-cell{
+        padding: 0.68rem;
+        min-width: 0;
+    }
+    .summary-cell .value{
+        font-size: 1rem;
+        overflow-wrap: anywhere;
+    }
+    .summary-cell .sub{
+        font-size: 0.7rem;
+    }
+
+    /*main section*/
+    .main-grid,
+    .bottom-grid {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 0.5rem;
+    }
+    section {
+        padding: 0.75rem;
+        min-width: 0;
+    }
+    section h2 {
+        font-size: 0.95rem;
+    }
+    
+    #run-tests-btn,
+    #clear-all-btn {
+        align-items: center;
+        flex: 1;
+        min-width: 0;
+    }
+    button {
+        min-height: 40px;
+    }
+    /*quick-row button*/
+    .quick-row {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+    .quick-row button {
+        width: 100%;
+        min-height: 40px;
+        margin: 0;
+    }
+    
+    /*toolbar button*/
+
+    .toolbar {
+        gap: 0.4rem;
+    }
+
+    .toolbar button {
+        min-height: 42px;
+    }
+    /*filters*/
+
+    .filter-bar {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 0.5rem;
+    }
+
+    /*transaction table*/
+    #transaction-list {
+        width: 100%;
+        max-width: 100%;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    #transaction-list table {
+        min-width: 600px;
+        white-space: nowrap;
+    }
+    
+    /*bottom section*/
+    .bottom-grid section {
+        min-width: 0;
+        overflow: hidden;
+    }
+    /* Budget settings */
+    #budget-form .toolbar {
+        flex-wrap: wrap;
+    }
+
+    #budget-form .toolbar input {
+        min-width: 0;
+    }
+    /* Canvas chart */
+    /* Chart canvas */
+    #spending-canvas {
+        display: block;
+        width: 100%;
+        max-width: 100%;
+        height: 220px;
+        box-sizing: border-box;
+    }
+    /* .bottom-grid,
+    .main-grid,
+    section {
+        min-width: 0;
+        box-sizing: border-box;
+    } */
+
+    
+}

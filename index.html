@@ -19,8 +19,8 @@
                 <div class="toolbar">
                     <button type="button" class="secondary" id="seed-demo-btn">Load Sample Data</button>
                     <button type="button" class="secondary" id="export-csv-btn">Export CSV</button>
-                    <label for="import-csv-input" role="button" class="secondary" style="margin:0;">Import CSV</label>
-                    <input type="file" id="import-csv-input" accept=".csv,text/csv" style="display:none;">
+                    <button type="button" class="secondary" id="import-csv-btn">Import CSV</button>
+                    <input type="file" id="import-csv-input" accept=".csv,text/csv" hidden>
                 </div>
             </div>
         </header>
@@ -157,7 +157,7 @@
                         </select>
                     </div>
                 </div>
-                <canvas id="spending-canvas" height="220"></canvas>
+                <canvas id="spending-canvas" width="800" height="220"></canvas>
                 <div style="overflow-x:auto; margin-top:0.75rem;">
                     <table>
                         <thead>
