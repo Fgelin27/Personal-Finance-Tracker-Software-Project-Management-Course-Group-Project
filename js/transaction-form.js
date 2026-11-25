@@ -298,9 +298,12 @@ function drawChart(rows, totalExpense) {
             ctx.fillText(fmtCurrency(r.total), leftPad + barW + 8, y + rowH / 2 + 4);
         });
     } else {
-        const cx = Math.min(w * 0.3, 130);
+        const narrow = w < 380; //detection of narrow screen
+        const cx = narrow ? w * 0.27 : w * 0.25;
         const cy = h / 2;
-        const radius = Math.min(cx - 20, h / 2 - 20);
+        
+
+        const radius = Math.min(narrow ? 65 : 75, h * 0.36, w * 0.20);
         let angle = -Math.PI / 2;
 
         top.forEach((r, i) => {
@@ -322,7 +325,7 @@ function drawChart(rows, totalExpense) {
         ctx.fillStyle = "#252526";
         ctx.fill();
 
-        const legendX = cx + radius + 24;
+        const legendX = cx + radius + 16; //reduce from 24 to 26
         top.forEach((r, i) => {
             const ly = 28 + i * 28;
             ctx.fillStyle = palette[i % palette.length];
